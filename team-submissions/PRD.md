@@ -10,10 +10,10 @@
 
 | Role | Name | GitHub Handle | Discord Handle
 | :--- | :--- | :--- | :--- |
-| **Project Lead** (Architect) | Prakrisht | [@handle] | [@handle] |
-| **GPU Acceleration PIC** (Builder) | Priyanshi | [@handle] | [@handle] |
-| **Quality Assurance PIC** (Verifier) | Aarav | [@handle] | [@handle] |
-| **Technical Marketing PIC** (Storyteller) | Prakrisht | [@handle] | [@handle] |
+| **Project Lead** (Architect) | Prakrisht | [@beetrandahiya] | [@beeetran] |
+| **GPU Acceleration PIC** (Builder) | Priyanshi | [@Cass490] | [@riyanshi0394] |
+| **Quality Assurance PIC** (Verifier) | Aarav | [@goatab] | [@g.o.a.t21] |
+| **Technical Marketing PIC** (Storyteller) | Prakrisht | [@beetrandahiya] | [@beeetran] |
 
 ---
 
