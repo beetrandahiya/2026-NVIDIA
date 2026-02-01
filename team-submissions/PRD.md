@@ -66,6 +66,10 @@
     * NVIDIA RTX 4070 Ti (local) or Brev L4/A100 instances for large N benchmarks
     * Target: N=20+ for quantum circuit, N=30+ for full hybrid workflow
 
+
+#### q-braid GPU kept crashing, and debugging that took a good amount of time. q-braid was not the best of experiences...
+#### Otherwise the implmenetation was flawless on linux
+
 ---
 
 ## 4. The Verification Plan
