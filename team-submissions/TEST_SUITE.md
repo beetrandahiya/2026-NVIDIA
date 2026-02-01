@@ -1,13 +1,13 @@
-# Test Suite Documentation - Milestone 3
+# Test Suite Documentation
 
 **Team:** Eigencrew  
-**QA PIC:** Aarav (@goatab)
+**Challenge:** iQuHACK 2026 NVIDIA LABS Challenge
 
 ---
 
 ## Overview
 
-This document describes the verification strategy and test suite for the LABS Quantum-Enhanced Optimization project. The tests validate both the quantum (CUDA-Q) and classical (MTS) components.
+This document describes the verification strategy and test suite for the LABS Quantum-Enhanced Optimization project. The tests validate both the quantum (CUDA-Q) and classical (MTS) components, with specific focus on verifying our implementation of the Trotterized Counterdiabatic (CD) approach from arXiv:2511.04553.
 
 ## Test Files
 
@@ -56,6 +56,7 @@ python tests.py
    - Provides confidence before scaling to large N
 
 3. **Interaction Indices (Circuit Correctness)**
+   - G2/G4 indices from paper Equation 15 (arXiv:2511.04553)
    - G2 count formula: N(N-1)/2 is mathematically provable
    - G4 index validity ensures quantum gates apply to correct qubits
    - Catches off-by-one errors common in loop constructs
@@ -73,11 +74,12 @@ python tests.py
 |-----------|----------|--------------|
 | `compute_energy()` | ✅ Full | Direct tests + implicit in all MTS tests |
 | `compute_autocorrelation()` | ✅ Full | Length, range, energy relationship |
-| `get_interactions()` | ✅ Full | Index validity, count formula, no duplicates |
+| `get_interactions()` | ✅ Full | Index validity, count formula (Eq. 15), no duplicates |
 | `tabu_search()` | ✅ Full | Improvement property, finds optima |
 | `memetic_tabu_search()` | ✅ Full | Integration via comparison tests |
 | `initialize_population_random()` | ✅ Full | Size, length, value constraints |
-| CUDA-Q `trotterized_circuit` | ⚠️ Partial | Notebook validation cell (runtime tests) |
+| `trotterized_cd_circuit` | ⚠️ Partial | Notebook validation (runtime tests) |
+| `compute_theta()` | ✅ Full | Verified against Eq. 16-17 formulas |
 
 ### Notebook Self-Validation (Cell 17)
 
@@ -107,7 +109,8 @@ AI-generated code may contain subtle errors that "look right" but are mathematic
 
 2. **Cross-Reference with Literature**
    - Barker codes from radar engineering literature
-   - Known optimal energies from LABS research papers
+   - Known optimal energies from LABS research (Packebusch & Mertens, 2016)
+   - Counterdiabatic formulas verified against arXiv:2511.04553
 
 3. **Symmetry Exploitation**
    - E(s) = E(-s) catches sign errors
@@ -233,5 +236,6 @@ KNOWN_OPTIMA = {
 | Test Categories | 8 |
 | Code Coverage | >90% |
 | AI Hallucination Checks | Hand-calc, brute-force, literature |
+| Paper Reference | arXiv:2511.04553 (Digitized-counterdiabatic quantum optimization) |
 
-**Status: ✅ Ready for Milestone 3 Submission**
+**Status: ✅ Ready for Submission**
